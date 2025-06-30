@@ -1,132 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mina AI – Intelligent Customer Care</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <style>
-      body { font-family: 'Inter', sans-serif; }
-      .hero-bg {
-        background: url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d5?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mina AI – Intelligent Customer Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tilt-card {
+      transform-style: preserve-3d;
+      transition: transform 0.3s ease;
+    }
+    @media (hover: hover) {
+      .tilt-card:hover {
+        transform: rotateY(5deg) rotateX(5deg) scale(1.05);
       }
-    </style>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="bg-white text-black">
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-900 font-sans overflow-x-hidden">
 
-    <!-- Header -->
-    <header class="bg-white sticky top-0 shadow z-50 w-full" data-aos="fade-down">
-      <div class="max-w-7xl mx-auto flex justify-between items-center p-5">
-        <h1 class="text-2xl font-extrabold text-purple-800">Mina AI</h1>
-        <nav class="space-x-6">
-          <a href="#features" class="hover:text-purple-800">Features</a>
-          <a href="#roadmap" class="hover:text-purple-800">Roadmap</a>
-          <a href="#waitlist" class="hover:text-purple-800">Join Waitlist</a>
-        </nav>
+  <!-- Header -->
+  <header class="bg-white sticky top-0 shadow z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold text-purple-800">Mina AI</h1>
+      <nav class="hidden md:flex space-x-6">
+        <a href="#features" class="hover:text-purple-600">Features</a>
+        <a href="#roadmap" class="hover:text-purple-600">Roadmap</a>
+        <a href="#waitlist" class="hover:text-purple-600">Join Waitlist</a>
+      </nav>
+      <button id="nav-toggle" class="md:hidden text-2xl">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col space-y-2">
+      <a href="#features" class="hover:text-purple-600">Features</a>
+      <a href="#roadmap" class="hover:text-purple-600">Roadmap</a>
+      <a href="#waitlist" class="hover:text-purple-600">Join Waitlist</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-r from-purple-900 via-purple-700 to-purple-600 text-white text-center py-24 px-6">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold mb-4">Loading AI superpowers...</h2>
+      <p class="text-xl mb-6">Trained with your data. Available 24/7. Multilingual. Always accurate.</p>
+      <a href="#waitlist" class="inline-block bg-white text-purple-800 font-bold py-3 px-6 rounded-full hover:bg-purple-100 transition">Join the Waitlist</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 bg-purple-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-center text-purple-800 mb-12">Why Mina?</h3>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">🧠 Context-Aware</h4>
+          <p>Understands previous conversations to give accurate responses.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">🌍 Multilingual</h4>
+          <p>Supports over 30 languages to reach global audiences.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">⚡ Fast & Reliable</h4>
+          <p>Instant responses powered by fine-tuned AI engines.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">🔐 Secure by Design</h4>
+          <p>End-to-end encrypted and compliant with global standards.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">📊 Smart Analytics</h4>
+          <p>Monitor user satisfaction, usage, and trends in real time.</p>
+        </div>
+        <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
+          <h4 class="text-xl font-semibold mb-2">🎨 Customizable</h4>
+          <p>Adapt tone, language, and personality to match your brand.</p>
+        </div>
       </div>
-    
-    <script>
-      document.getElementById("nav-toggle").addEventListener("click", function () {
-        const menu = document.getElementById("nav-menu");
-        menu.classList.toggle("hidden");
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h3 class="text-3xl font-bold text-purple-800 mb-8">Product Roadmap</h3>
+      <ul class="space-y-6 text-left">
+        <li><strong>✅ Version 1.0:</strong> Voice + chat, dashboard, CRM sync, live agent escalation</li>
+        <li><strong>🔄 Version 1.5:</strong> Smart triggers, feedback analytics, persona workflows</li>
+        <li><strong>🚀 Version 2.0:</strong> Omnichannel memory, compliance toolkit, team handoff</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Waitlist -->
+  <section id="waitlist" class="bg-gradient-to-r from-purple-100 to-purple-200 py-20 text-center">
+    <div class="max-w-md mx-auto px-6">
+      <h3 class="text-3xl font-bold mb-4 text-purple-800">Get Early Access</h3>
+      <p class="mb-6 text-gray-700">Be one of the first to use Mina. Enter your email below:</p>
+      <form id="waitlist-form" class="space-y-4">
+        <input type="email" id="email" required placeholder="you@example.com"
+          class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:outline-none" />
+        <button type="submit"
+          class="w-full bg-purple-800 text-white font-semibold py-2 rounded-lg hover:bg-purple-900 transition">Join Now</button>
+      </form>
+      <p id="form-msg" class="text-purple-700 mt-4 hidden">✅ You're on the list!</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white py-6 text-center text-sm text-gray-500">
+    &copy; 2025 Mina AI. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Mobile menu toggle
+    document.getElementById("nav-toggle").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden");
+    });
+
+    // Typewriter effect
+    const phrases = [
+      "Empower Your Support with Mina AI",
+      "24/7 AI Assistance. Multilingual. Fast.",
+      "Train Mina with Your Own Knowledge Base"
+    ];
+    let typeIndex = 0, letterIndex = 0, isDeleting = false;
+    const heroTitle = document.querySelector("h2");
+
+    function typeLoop() {
+      const current = phrases[typeIndex];
+      heroTitle.textContent = current.substring(0, letterIndex) + (isDeleting ? "" : "▌");
+      if (!isDeleting && letterIndex < current.length) {
+        letterIndex++;
+      } else if (isDeleting && letterIndex > 0) {
+        letterIndex--;
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) typeIndex = (typeIndex + 1) % phrases.length;
+        setTimeout(typeLoop, 1200);
+        return;
+      }
+      setTimeout(typeLoop, isDeleting ? 50 : 100);
+    }
+    typeLoop();
+
+    // Scroll fade-in for tilt-cards
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          entry.target.classList.remove("opacity-0", "translate-y-4");
+        }
       });
-    </script>
-    </header>
-    
+    }, { threshold: 0.2 });
 
-    <!-- Hero -->
-    <section class="hero-bg text-white py-32 text-center relative">
-      <div class="absolute inset-0 bg-gradient-to-r from-purple-900 via-purple-700 to-black opacity-80"></div>
-      <div class="relative z-10 max-w-4xl mx-auto px-6" data-aos="zoom-in" data-aos-duration="1500">
-        <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_touohxv0.json" background="transparent" speed="1" style="width: 300px; height: 300px; margin: 0 auto;" loop autoplay></lottie-player>
-        <h2 class="text-5xl font-extrabold mb-4"><span id="typewriter"></span></h2>
-        <p class="text-xl mb-6">Train Mina with your data. Speak with your customers everywhere. Instant AI. Maximum Trust.</p>
-        <a href="#waitlist" class="inline-block px-8 py-3 bg-purple-800 text-white rounded-full font-semibold hover:bg-purple-900 transition-transform duration-300 transform hover:scale-105">Join the Waitlist</a>
-      </div>
-    </section>
+    document.querySelectorAll(".tilt-card").forEach(card => {
+      card.classList.add("opacity-0", "translate-y-4", "transition", "duration-700");
+      observer.observe(card);
+    });
 
-    <!-- Features -->
-    <section id="features" class="py-20 bg-purple-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Core Features</h3>
-        <div class="grid md:grid-cols-3 gap-10">
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left">
-            <h4 class="text-xl font-semibold mb-2">📚 Data Ingestion</h4>
-            <p>Mina learns from PDFs, CRMs, websites & more using smart embeddings.</p>
-          </div>
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left" data-aos-delay="100">
-            <h4 class="text-xl font-semibold mb-2">🌍 Multilingual Support</h4>
-            <p>Translate conversations in real time with support for local dialects too.</p>
-          </div>
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left" data-aos-delay="200">
-            <h4 class="text-xl font-semibold mb-2">🎧 Voice + Chat</h4>
-            <p>Talk or type — Mina uses Whisper & TTS for smooth conversations.</p>
-          </div>
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left" data-aos-delay="300">
-            <h4 class="text-xl font-semibold mb-2">🔌 Integrations</h4>
-            <p>Connect easily to WhatsApp, Telegram, Messenger, and more.</p>
-          </div>
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left" data-aos-delay="400">
-            <h4 class="text-xl font-semibold mb-2">📊 Analytics</h4>
-            <p>Track resolution rates, CSAT, user intent and performance in real time.</p>
-          </div>
-          <div class="p-6 bg-white rounded-2xl shadow-xl tilt-card" data-aos="flip-left" data-aos-delay="500">
-            <h4 class="text-xl font-semibold mb-2">🎨 White-Labeled</h4>
-            <p>Customize name, colors, tone, and even voice to match your brand.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    // Waitlist form
+    document.getElementById("waitlist-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email");
+      const msg = document.getElementById("form-msg");
 
-    <!-- Roadmap -->
-    <section id="roadmap" class="py-20 bg-white">
-      <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Product Roadmap</h3>
-        <div class="space-y-10">
-          <div data-aos="fade-right">
-            <h4 class="text-xl font-semibold text-purple-800">Version 1.0 — Core MVP</h4>
-            <p>Chat + voice, dashboard, sentiment detection, CRM ingestion, live chat escalation.</p>
-          </div>
-          <div data-aos="fade-left" data-aos-delay="100">
-            <h4 class="text-xl font-semibold text-purple-700">Version 1.5 — Pro Intelligence</h4>
-            <p>Feedback systems, smart triggers, NPS tracking, custom persona & intent workflows.</p>
-          </div>
-          <div data-aos="fade-right" data-aos-delay="200">
-            <h4 class="text-xl font-semibold text-pink-600">Version 2.0 — Enterprise Layer</h4>
-            <p>Multi-brand support, compliance toolkit, omnichannel memory, agent collaboration.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      const valid = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email.value);
+      if (!valid) {
+        msg.textContent = "❌ Please enter a valid email address.";
+        msg.classList.remove("hidden", "text-purple-700");
+        msg.classList.add("text-red-600");
+        return;
+      }
 
-    <!-- Waitlist -->
-    <section id="waitlist" class="bg-gradient-to-r from-blue-50 to-purple-100 py-20 text-center">
-      <div class="max-w-md mx-auto px-6" data-aos="fade-up">
-        <h3 class="text-3xl font-bold mb-4">Join the Waitlist</h3>
-        <p class="mb-6 text-gray-700">Be one of the first to deploy Mina. Enter your email:</p>
-        <form id="waitlist-form" class="space-y-4 max-w-md mx-auto w-full">
-          <input type="email" id="email" required placeholder="you@example.com"
-            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-purple-500 focus:outline-none" />
-          <button type="submit"
-            class="w-full bg-purple-800 text-white font-semibold py-2 rounded-lg hover:bg-purple-900 transition focus:outline-none">
-            Join Now
-          </button>
-        </form>
-        <p id="form-msg" class="text-purple-700 mt-4 hidden">✅ You're on the list!</p>
-      </div>
-    </section>
+      msg.textContent = "✅ You're on the list!";
+      msg.classList.remove("hidden", "text-red-600");
+      msg.classList.add("text-purple-700");
+      this.reset();
+      setTimeout(() => msg.classList.add("hidden"), 4000);
+    });
+  </script>
 
-    <!-- Footer -->
-    <footer class="bg-white py-6 w-full text-center text-sm text-gray-500" data-aos="fade-up">
-      &copy; 2025 Mina AI • <a href="#" class="underline">Privacy</a> • <a href="#" class="underline">Terms</a>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
-  </body>
+</body>
 </html>
