@@ -53,41 +53,53 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">🧠 Context-Aware</h4>
-          <p>Understands previous conversations to give accurate responses.</p>
+          <p>Understands past chats and adapts to customer needs in real time.</p>
         </div>
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">🌍 Multilingual</h4>
-          <p>Supports over 30 languages to reach global audiences.</p>
+          <p>Fluent in 30+ languages with local slang detection and translation.</p>
         </div>
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">⚡ Fast & Reliable</h4>
-          <p>Instant responses powered by fine-tuned AI engines.</p>
+          <p>Answers in milliseconds, built for peak traffic and uptime.</p>
         </div>
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">🔐 Secure by Design</h4>
-          <p>End-to-end encrypted and compliant with global standards.</p>
+          <p>Data encrypted end-to-end with full GDPR and HIPAA compliance.</p>
         </div>
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">📊 Smart Analytics</h4>
-          <p>Monitor user satisfaction, usage, and trends in real time.</p>
+          <p>Tracks CSAT, resolution rate, NPS, and intent classification.</p>
         </div>
         <div class="p-6 bg-white rounded-xl shadow-md tilt-card">
           <h4 class="text-xl font-semibold mb-2">🎨 Customizable</h4>
-          <p>Adapt tone, language, and personality to match your brand.</p>
+          <p>Change the name, voice, and tone to match your unique brand.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Roadmap -->
+  <!-- Roadmap (improved) -->
   <section id="roadmap" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <h3 class="text-3xl font-bold text-purple-800 mb-8">Product Roadmap</h3>
-      <ul class="space-y-6 text-left">
-        <li><strong>✅ Version 1.0:</strong> Voice + chat, dashboard, CRM sync, live agent escalation</li>
-        <li><strong>🔄 Version 1.5:</strong> Smart triggers, feedback analytics, persona workflows</li>
-        <li><strong>🚀 Version 2.0:</strong> Omnichannel memory, compliance toolkit, team handoff</li>
-      </ul>
+    <div class="max-w-4xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-purple-800 text-center mb-12">Product Roadmap</h3>
+      <ol class="relative border-l-4 border-purple-300 pl-6 space-y-10">
+        <li class="group">
+          <span class="absolute -left-3 top-1.5 w-6 h-6 bg-purple-700 rounded-full border-4 border-white shadow-md"></span>
+          <h4 class="text-xl font-semibold text-purple-800">✅ Version 1.0 — Core Launch</h4>
+          <p class="text-gray-700 mt-2 ml-2">Voice & chat AI, dashboard analytics, CRM ingestion, human fallback.</p>
+        </li>
+        <li class="group">
+          <span class="absolute -left-3 top-1.5 w-6 h-6 bg-yellow-400 rounded-full border-4 border-white shadow-md"></span>
+          <h4 class="text-xl font-semibold text-yellow-700">🚧 Version 1.5 — Smart Tools</h4>
+          <p class="text-gray-700 mt-2 ml-2">Auto-intent workflows, feedback loops, NPS triggers, persona builder.</p>
+        </li>
+        <li class="group">
+          <span class="absolute -left-3 top-1.5 w-6 h-6 bg-gray-300 rounded-full border-4 border-white shadow-md"></span>
+          <h4 class="text-xl font-semibold text-gray-800">🧪 Version 2.0 — Enterprise Suite</h4>
+          <p class="text-gray-700 mt-2 ml-2">Multi-brand control, compliance toolkit, omnichannel AI memory.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -113,7 +125,7 @@
 
   <!-- JavaScript -->
   <script>
-    // Mobile menu toggle
+    // Toggle mobile nav
     document.getElementById("nav-toggle").addEventListener("click", () => {
       document.getElementById("mobile-menu").classList.toggle("hidden");
     });
@@ -137,14 +149,14 @@
       } else {
         isDeleting = !isDeleting;
         if (!isDeleting) typeIndex = (typeIndex + 1) % phrases.length;
-        setTimeout(typeLoop, 1200);
+        setTimeout(typeLoop, 1000);
         return;
       }
       setTimeout(typeLoop, isDeleting ? 50 : 100);
     }
     typeLoop();
 
-    // Scroll fade-in for tilt-cards
+    // Scroll reveal for cards and roadmap
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -152,11 +164,11 @@
           entry.target.classList.remove("opacity-0", "translate-y-4");
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
 
-    document.querySelectorAll(".tilt-card").forEach(card => {
-      card.classList.add("opacity-0", "translate-y-4", "transition", "duration-700");
-      observer.observe(card);
+    document.querySelectorAll(".tilt-card, #roadmap li").forEach(el => {
+      el.classList.add("opacity-0", "translate-y-4", "transition", "duration-700");
+      observer.observe(el);
     });
 
     // Waitlist form
@@ -182,4 +194,4 @@
   </script>
 
 </body>
-</html>
+  </html>
