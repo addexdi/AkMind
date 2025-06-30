@@ -2,26 +2,13 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffffff;
   color: #111111;
-  margin: 0;
-  padding: 0;
 }
-
 .tilt-card {
   transform-style: preserve-3d;
   transition: transform 0.3s ease;
   will-change: transform;
-  background-color: #f3f0ff;
-  border-radius: 1rem;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  background-color: #f3f0ff; /* soft purple */
 }
-
-@media screen and (max-width: 768px) {
-  .tilt-card {
-    transform: none !important;
-  }
-}
-
 @media (hover: none) {
   .tilt-card {
     transform: none !important;
