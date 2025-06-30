@@ -1,8 +1,12 @@
 
 AOS.init();
 
-// 3D tilt effect for non-touch devices
-if (window.matchMedia('(hover: hover)').matches) {
+// Touch-safe 3D effect
+const isTouchDevice = () => {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+};
+
+if (!isTouchDevice()) {
   document.querySelectorAll(".tilt-card").forEach(card => {
     card.addEventListener("mousemove", e => {
       const rect = card.getBoundingClientRect();
@@ -20,7 +24,7 @@ if (window.matchMedia('(hover: hover)').matches) {
   });
 }
 
-// Waitlist form handling
+// Waitlist form response
 document.getElementById("waitlist-form").addEventListener("submit", function (e) {
   e.preventDefault();
   const email = document.getElementById("email").value;
@@ -36,39 +40,34 @@ document.getElementById("waitlist-form").addEventListener("submit", function (e)
   }
 });
 
-// Typewriter effect
+// Typewriter
 const phrases = [
-  "Smarter Customer Support with Mina",
-  "Instant AI. Maximum Trust.",
-  "Train Mina with Your Data"
+  "Empower your support with AI.",
+  "Engage. Assist. Delight.",
+  "Mina is your customer service AI."
 ];
 let i = 0, j = 0, currentPhrase = [], isDeleting = false;
 
 function loopTypewriter() {
   document.getElementById('typewriter').innerHTML = currentPhrase.join('');
-
   if (!isDeleting && j <= phrases[i].length) {
     currentPhrase.push(phrases[i][j]);
     j++;
   }
-
   if (isDeleting && j <= phrases[i].length) {
     currentPhrase.pop();
     j--;
   }
-
   if (j === phrases[i].length) {
     isDeleting = true;
-    setTimeout(loopTypewriter, 1000);
+    setTimeout(loopTypewriter, 1200);
     return;
   }
-
   if (isDeleting && j === 0) {
     currentPhrase = [];
     isDeleting = false;
     i = (i + 1) % phrases.length;
   }
-
-  setTimeout(loopTypewriter, isDeleting ? 50 : 120);
+  setTimeout(loopTypewriter, isDeleting ? 50 : 110);
 }
 loopTypewriter();
